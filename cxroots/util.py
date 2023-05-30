@@ -41,10 +41,10 @@ def integrate_quad_complex(
     """
     # full_output=0 ensures only 2 values returned
     integral_real, _ = scipy.integrate.quad(
-        lambda t: np.real(func(t)), *args, full_output=0, **kwargs
+        lambda t: np.real(func(t)), *args, full_output=0, **kwargs, limit=100
     )
     integral_imag, _ = scipy.integrate.quad(
-        lambda t: np.imag(func(t)), *args, full_output=0, **kwargs
+        lambda t: np.imag(func(t)), *args, full_output=0, **kwargs, limit=100
     )
     integral = integral_real + 1j * integral_imag
     return integral
